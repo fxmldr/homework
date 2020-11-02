@@ -14,6 +14,7 @@ fun pi(precision: Int) : ArrayList<String> {
     var a = 1.0
     var b = 1/sqrt(2.0)
     var t = 0.25
+    result.add(precision.toString())
     for (i in 0..3) {
         val an = (a+b)/2.0
         b = sqrt(a * b)
