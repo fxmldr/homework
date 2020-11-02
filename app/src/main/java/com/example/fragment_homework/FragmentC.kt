@@ -21,10 +21,10 @@ class FragmentC : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_c, container, false)
 
-        pi = arguments?.getDouble("bc")
+        val result = arguments?.getStringArrayList("bc")
 
         val recyclerView = view.findViewById(R.id.recyclerView) as RecyclerView
-        val adapter = Adapter(getAnswer(pi.toString()))
+        val adapter = result?.let { Adapter(it) }
 
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = adapter

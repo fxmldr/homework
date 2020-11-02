@@ -10,7 +10,7 @@ import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 
 class Adapter(
-    private val values: MutableList<TestData>
+    private val values: ArrayList<String>
 
 ) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -32,9 +32,9 @@ class Adapter(
         private val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
         private val iconImageView:  ImageView = itemView.findViewById(R.id.iconImageView)
 
-        fun setTestData(testData: TestData) {
-            contentTextView.text = testData.text
-            iconImageView.setImageResource(testData.icon)
+        fun setTestData(testData: String) {
+            contentTextView.text = values.get(position)
+            //iconImageView.setImageResource(testData.icon)
             Log.d("OnBindClickListener", "onBind")
         }
     }

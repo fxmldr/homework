@@ -2,7 +2,6 @@ package com.example.fragment_homework
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 
 const val TAG = "LOGW"
 const val MSG_AB = "ab"
@@ -34,9 +33,9 @@ class MainActivity : AppCompatActivity(), Communicator{
         transaction.commit()
     }
 
-    override fun passDataBC(result: Double) {
+    override fun passDataBC(result: ArrayList<String>) {
         val bundle = Bundle()
-        bundle.putDouble(MSG_BC,result)
+        bundle.putStringArrayList(MSG_BC ,result)
 
         val transaction = this.supportFragmentManager.beginTransaction()
         val fragmentC = FragmentC()
